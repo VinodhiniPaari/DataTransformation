@@ -14,5 +14,6 @@ import { jwtConfig } from '../config/jwt.config';
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy, JwtAuthGuard],
+  exports: [JwtModule, AuthService, JwtStrategy, JwtAuthGuard],
 })
 export class AuthModule {}

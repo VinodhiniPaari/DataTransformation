@@ -8,20 +8,21 @@ export function normalizeDate(dateString: string): string | null {
       return parsedDate.toISOString().split('T')[0];
     }
   }
-  return null; // Return null for invalid dates
+  return null;
 }
 
 export function cleanData(data: Record<string, any>): Record<string, any> {
   const cleanedData = { ...data };
 
-  // Handle masked data
   for (const key in cleanedData) {
-    if (typeof cleanedData[key] === 'string' && cleanedData[key].includes('####')) {
-      cleanedData[key] = null; // Nullify corrupted data
+    if (
+      typeof cleanedData[key] === 'string' &&
+      cleanedData[key].includes('####')
+    ) {
+      cleanedData[key] = null;
     }
   }
 
-  // Normalize dates
   if (cleanedData.dateOfBirth) {
     cleanedData.dateOfBirth = normalizeDate(cleanedData.dateOfBirth);
   }
