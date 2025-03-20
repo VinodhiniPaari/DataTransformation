@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@auth-service/*": ["apps/auth-service/src/*"],
+      "@file-upload-service/*": ["apps/file-upload-service/src/*"],
+      "@data-transformation-service/*": ["apps/data-transformation-service/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
